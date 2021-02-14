@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (index == 2) return Medications();
     if (index == 3) return MyCustomForm();
 
-    return Text('Default Page');
+    return Text('Welcome - No New Updates Since Your Last Visit');
   }
 
   @override

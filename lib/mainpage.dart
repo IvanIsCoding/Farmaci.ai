@@ -12,7 +12,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     String title = '';
     setState(() {
-      title = globals.name;
+      title = globals.atSign;
     });
     return MaterialApp(
       title: globals.appName,

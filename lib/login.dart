@@ -22,8 +22,8 @@ class LoginDemo extends StatefulWidget {
 }
 
 class _LoginDemoState extends State<LoginDemo> {
-  String atSign;
   ClientSdkService clientSdkService = ClientSdkService.getInstance();
+  String atSign;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,8 @@ class _LoginDemoState extends State<LoginDemo> {
                       hintText: 'Enter valid email id as abc@gmail.com'),
                   onChanged: (String newValue) {
                     setState(() {
-                      atSign = newValue + '🛠';
+                      globals.atSign = newValue + '🛠';
+                      atSign = globals.atSign;
                     });
                   }),
             ),
