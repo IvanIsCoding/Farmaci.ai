@@ -1,21 +1,18 @@
-import "./patientUpdate.dart";
-
 /* Tracked patient in friend's list */
 
 class Patient {
   String name;
   String relationship;
-  PatientUpdate update;
+  String date;
+  String summary;
+  String status;
 
-  Patient(String name, String relationship, DateTime date, String summary,
+  Patient(String name, String relationship, String date, String summary,
       String status) {
     this.name = name;
     this.relationship = relationship;
-    this.update = update;
-    this.update = new PatientUpdate(date, summary, status);
-  }
-
-  void statusUpdate(PatientUpdate update) {
-    this.update = update;
+    this.date = date;
+    this.summary = summary;
+    this.status = status;
   }
 }
