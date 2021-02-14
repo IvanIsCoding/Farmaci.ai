@@ -1,4 +1,4 @@
-import 'userinfo.dart';
+import 'globals.dart' as globals;
 import 'package:flutter/material.dart';
 import './mainpage.dart';
 
