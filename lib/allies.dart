@@ -55,8 +55,12 @@ class _AlliesState extends State<Allies> {
       ),
       ListTile(
         leading: Text("Status Given By Nurse: "),
-        title: Text("\"" + friendList[patientIndex].status + "\""),
-      )
+      ),
+      ListTile(
+          leading: Text(
+        "\"" + friendList[patientIndex].status + "\"",
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ))
     ]);
     //}
 
