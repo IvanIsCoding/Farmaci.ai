@@ -63,39 +63,5 @@ class _AlliesState extends State<Allies> {
       ))
     ]);
     //}
-
-    patientIndex = 0;
-
-    return ListView(
-      children: <Widget>[
-        ListTile(
-          leading: Icon(Icons.person_sharp),
-          title: Text(friendList[0].name),
-          trailing: Icon(Icons.keyboard_arrow_right),
-          onTap: () {
-            patientIndex = 0;
-            setState(() {});
-          },
-        ),
-        ListTile(
-          leading: Icon(Icons.person_sharp),
-          title: Text(friendList[1].name),
-          trailing: Icon(Icons.keyboard_arrow_right),
-          onTap: () {
-            patientIndex = 1;
-            setState(() {});
-          },
-        ),
-        ListTile(
-          leading: Icon(Icons.person_sharp),
-          title: Text(friendList[2].name),
-          trailing: Icon(Icons.keyboard_arrow_right),
-          onTap: () {
-            patientIndex = 2;
-            setState(() {});
-          },
-        ),
-      ],
-    );
   }
 }
