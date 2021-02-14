@@ -5,15 +5,15 @@ import 'package:at_server_status/at_server_status.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:at_commons/at_commons.dart';
 import 'package:at_demo_data/at_demo_data.dart' as at_demo_data;
-import '../utils/at_conf.dart' as conf;
+import '../utils/constants.dart' as conf;
 import 'package:at_client/src/util/encryption_util.dart';
 
-class ServerDemoService {
-  static final ServerDemoService _singleton = ServerDemoService._internal();
+class ClientSdkService {
+  static final ClientSdkService _singleton = ClientSdkService._internal();
 
-  ServerDemoService._internal();
+  ClientSdkService._internal();
 
-  factory ServerDemoService.getInstance() {
+  factory ClientSdkService.getInstance() {
     return _singleton;
   }
 
@@ -51,15 +51,15 @@ class ServerDemoService {
       ..isLocalStoreRequired = true
       ..commitLogPath = path
       ..cramSecret = cramSecret
-      ..namespace = conf.namespace
+      ..namespace = conf.MixedConstants.NAMESPACE
       ..syncStrategy = SyncStrategy.IMMEDIATE
-      ..rootDomain = conf.root
+      ..rootDomain = conf.MixedConstants.ROOT_DOMAIN
       ..hiveStoragePath = path;
     return _atClientPreference;
   }
 
   _checkAtSignStatus(String atsign) async {
-    var atStatusImpl = AtStatusImpl(rootUrl: conf.root);
+    var atStatusImpl = AtStatusImpl(rootUrl: conf.MixedConstants.ROOT_DOMAIN);
     var status = await atStatusImpl.get(atsign);
     return status.serverStatus;
   }
@@ -140,7 +140,7 @@ class ServerDemoService {
 
   Future<List<AtKey>> getAtKeys({String sharedBy}) async {
     return await _getAtClientForAtsign()
-        .getAtKeys(regex: conf.namespace, sharedBy: sharedBy);
+        .getAtKeys(regex: conf.MixedConstants.NAMESPACE, sharedBy: sharedBy);
   }
 
   Future<String> getAtSign() async {
