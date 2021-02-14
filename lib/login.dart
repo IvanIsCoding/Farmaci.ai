@@ -1,5 +1,8 @@
+import 'userinfo.dart';
 import 'package:flutter/material.dart';
 import './mainpage.dart';
+
+/* Login Boilerplate Credit to https://morioh.com/p/0c57f60b9571 */
 
 class LoginStateful extends StatelessWidget {
   @override
@@ -22,7 +25,7 @@ class _LoginDemoState extends State<LoginDemo> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: Text("Health Portal"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -36,7 +39,7 @@ class _LoginDemoState extends State<LoginDemo> {
                     /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                    child: Image.asset('asset/images/logo.jpg')),
+                    child: Image.asset('asset/images/logo.png')),
               ),
             ),
             Padding(
@@ -54,7 +57,6 @@ class _LoginDemoState extends State<LoginDemo> {
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
-
                 obscureText: true,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -63,7 +65,7 @@ class _LoginDemoState extends State<LoginDemo> {
               ),
             ),
             FlatButton(
-              onPressed: (){
+              onPressed: () {
                 //TODO FORGOT PASSWORD SCREEN GOES HERE
               },
               child: Text(
