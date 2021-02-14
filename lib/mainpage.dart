@@ -2,14 +2,21 @@ import 'globals.dart' as globals;
 import 'package:flutter/material.dart';
 import './homepage.dart';
 
-class MainPage extends StatelessWidget {
-  final appTitle = 'Hi, ' + globals.name;
+class MainPage extends StatefulWidget {
+  @override
+  _MainPageState createState() => _MainPageState();
+}
 
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
+    String title = '';
+    setState(() {
+      title = globals.name;
+    });
     return MaterialApp(
-      title: appTitle,
-      home: MyHomePage(title: appTitle),
+      title: globals.appName,
+      home: MyHomePage(title: "Welcome back, " + title),
     );
   }
 }

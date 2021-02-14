@@ -1,4 +1,5 @@
 import 'globals.dart' as globals;
+import './medications.dart';
 import 'allies.dart';
 import 'package:flutter/material.dart';
 import './login.dart';
@@ -12,14 +13,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Widget bodyContent = Text('My Page!');
-  void updateBody() => bodyContent = Allies();
+  int index = 0;
+  Widget serveBody() {
+    if (index == 1) return Allies();
+    if (index == 2) return Medications();
+    return Text('Default Page');
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
-      body: Center(child: bodyContent),
+      body: Center(child: serveBody()),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          children: [
+            IconButton(
+                icon: Icon(Icons.healing_sharp),
+                onPressed: () {
+                  setState(() {
+                    index = 2;
+                  });
+                }),
+            Spacer(),
+            IconButton(icon: Icon(Icons.pending_actions), onPressed: () {}),
+            Spacer(),
+            IconButton(icon: Icon(Icons.add_alert), onPressed: () {}),
+          ],
+        ),
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -31,9 +53,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ListTile(
-              title: Text('Friends and Family'),
-              onTap: updateBody,
-            ),
+                title: Text('Friends and Family'),
+                onTap: () {
+                  setState(() {
+                    index = 1;
+                  });
+                }),
             ListTile(
               title: Text('Log out'),
               onTap: () {
