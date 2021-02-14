@@ -3,6 +3,7 @@ import './medications.dart';
 import 'allies.dart';
 import 'package:flutter/material.dart';
 import './login.dart';
+import './nurseinput.dart';
 
 class MyHomePage extends StatefulWidget {
   final String title;
@@ -17,6 +18,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget serveBody() {
     if (index == 1) return Allies();
     if (index == 2) return Medications();
+    if (index == 3) return MyCustomForm();
+
     return Text('Default Page');
   }
 
@@ -47,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Hospit@lity'),
+              child: Text('@sclepius'),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
@@ -57,6 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: () {
                   setState(() {
                     index = 1;
+                  });
+                }),
+            ListTile(
+                title: Text('Input Patient Data'),
+                onTap: () {
+                  setState(() {
+                    index = 3;
                   });
                 }),
             ListTile(
