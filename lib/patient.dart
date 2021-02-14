@@ -18,4 +18,16 @@ class Patient {
   void statusUpdate(PatientUpdate update) {
     this.update = update;
   }
+
+  DateTime date() {
+    return this.update.date;
+  }
+
+  String summary() {
+    return this.update.summary;
+  }
+
+  String status() {
+    return this.update.status;
+  }
 }
