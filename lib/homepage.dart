@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ListTile(
-                title: Text('Friends and Family'),
+                title: Text('My Health'),
                 onTap: () {
                   setState(() {
                     index = 1;
