@@ -17,7 +17,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget serveBody() {
     if (index == 1) return Allies();
     if (index == 2) return Medications();
-
     return Text('Default Page');
   }
 

@@ -8,13 +8,15 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final appTitle = 'Hi, ' + globals.name;
-
   @override
   Widget build(BuildContext context) {
+    String title = '';
+    setState(() {
+      title = globals.name;
+    });
     return MaterialApp(
-      title: appTitle,
-      home: MyHomePage(title: appTitle),
+      title: globals.appName,
+      home: MyHomePage(title: "Welcome back, " + title),
     );
   }
 }

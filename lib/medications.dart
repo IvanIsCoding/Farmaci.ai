@@ -4,9 +4,15 @@ import 'package:flutter/material.dart';
 
 /* Widget for Friends & Family Page */
 
-class Medications extends StatelessWidget {
+class Medications extends StatefulWidget {
+  @override
+  _MedicationsState createState() => _MedicationsState();
+}
+
+class _MedicationsState extends State<Medications> {
   @override
   Widget build(BuildContext context) {
+    int index = 0;
     return ListView(
       children: <Widget>[
         ListTile(
