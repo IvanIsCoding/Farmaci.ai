@@ -1,33 +1,15 @@
+import 'globals.dart' as globals;
 import 'package:flutter/material.dart';
-import './subpage.dart';
+import './homepage.dart';
 
 class MainPage extends StatelessWidget {
-  
-  Future navigateToSubPage(context) async {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => SubPage()));
-}
+  final appTitle = 'Hi, ' + UserProfile.name;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Main Page'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Click button to move to SubPage'),
-            RaisedButton(
-              textColor: Colors.white,
-              color: Colors.blue,
-              child: Text('Go to SubPage'),
-onPressed: () {
-  navigateToSubPage(context);
-},
-            )
-          ],
-        ),
-      ),
+    return MaterialApp(
+      title: appTitle,
+      home: MyHomePage(title: appTitle),
     );
   }
 }
