@@ -1,6 +1,8 @@
 import 'globals.dart' as globals;
 import 'package:flutter/material.dart';
 import './mainpage.dart';
+import 'services/client_sdk_service.dart';
+import 'package:at_demo_data/at_demo_data.dart' as at_demo_data;
 
 /* Login Boilerplate Credit to https://morioh.com/p/0c57f60b9571 */
 
@@ -20,6 +22,9 @@ class LoginDemo extends StatefulWidget {
 }
 
 class _LoginDemoState extends State<LoginDemo> {
+  String atSign;
+  ClientSdkService clientSdkService = ClientSdkService.getInstance();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,11 +51,15 @@ class _LoginDemoState extends State<LoginDemo> {
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Email',
-                    hintText: 'Enter valid email id as abc@gmail.com'),
-              ),
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Email',
+                      hintText: 'Enter valid email id as abc@gmail.com'),
+                  onChanged: (String newValue) {
+                    setState(() {
+                      atSign = newValue + '🛠';
+                    });
+                  }),
             ),
             Padding(
               padding: const EdgeInsets.only(
@@ -79,10 +88,7 @@ class _LoginDemoState extends State<LoginDemo> {
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
               child: FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => MainPage()));
-                },
+                onPressed: _login,
                 child: Text(
                   'Login',
                   style: TextStyle(color: Colors.white, fontSize: 25),
@@ -97,5 +103,19 @@ class _LoginDemoState extends State<LoginDemo> {
         ),
       ),
     );
+  }
+
+  _login() async {
+    print("DEBUG: Log In ${atSign}");
+    if (atSign != null) {
+      String jsonData = clientSdkService.encryptKeyPairs(atSign);
+      clientSdkService.onboard(atsign: atSign).then((value) async {
+        Navigator.push(context, MaterialPageRoute(builder: (_) => MainPage()));
+      }).catchError((error) async {
+        await clientSdkService.authenticate(atSign,
+            jsonData: jsonData, decryptKey: at_demo_data.aesKeyMap[atSign]);
+        Navigator.push(context, MaterialPageRoute(builder: (_) => MainPage()));
+      });
+    }
   }
 }
