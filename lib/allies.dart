@@ -7,6 +7,24 @@ import 'package:flutter/material.dart';
 class Allies extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text('Temporary Friends & Family Widget');
+    return ListView(
+      children: <Widget>[
+        ListTile(
+          leading: Icon(Icons.person_sharp),
+          title: Text('Samantha Bengle'),
+          trailing: Icon(Icons.keyboard_arrow_right),
+        ),
+        ListTile(
+          leading: Icon(Icons.person_sharp),
+          title: Text('Rosemarie Watson'),
+          trailing: Icon(Icons.keyboard_arrow_right),
+        ),
+        ListTile(
+          leading: Icon(Icons.person_sharp),
+          title: Text('Tina Sanders'),
+          trailing: Icon(Icons.keyboard_arrow_right),
+        ),
+      ],
+    );
   }
 }
