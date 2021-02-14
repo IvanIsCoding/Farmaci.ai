@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './homepage.dart';
 
 class MainPage extends StatelessWidget {
-  final appTitle = 'Hi, ' + UserProfile.name;
+  final appTitle = 'Hi, ' + globals.name;
 
   @override
   Widget build(BuildContext context) {
