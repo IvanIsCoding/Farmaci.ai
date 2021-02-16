@@ -1,22 +1,38 @@
-import 'globals.dart' as globals;
-import './medications.dart';
-import 'allies.dart';
-import 'package:flutter/material.dart';
-import './login.dart';
-import './nurseinput.dart';
+/* mainpage.dart - screenstate
+ *
+ * The scaffold for the mainview of the app.
+ * subpages are dynamically loaded to the body
+ * 
+ * TO-DO:
+ * -The system for switching to subpages should likely be implemented using
+ * something other than an index. Enumerator?
+ * 
+ * -There are no VoidCallBacks! There's no current way for subpages to send
+ * data back to mainpage.dart. This is a problem, no?
+ * 
+ * -General overhaul of the UI. Many of the buttons don't do anything.🤷
+ * */
 
-class MyHomePage extends StatefulWidget {
+import 'package:atsclepius/globals.dart' as globals;
+import 'package:atsclepius/screenstates/mainpage/subpages/medications.dart';
+import 'package:atsclepius/data/patient.dart';
+import 'package:atsclepius/screenstates/mainpage/subpages/patients/listofpatients.dart';
+import 'package:flutter/material.dart';
+import 'package:atsclepius/screenstates/login.dart';
+import 'package:atsclepius/screenstates/mainpage/subpages/nurseinput.dart';
+
+class MainPage extends StatefulWidget {
   final String title;
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MainPage({Key key, this.title}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MainPageState extends State<MainPage> {
   int index = 0;
   Widget serveBody() {
-    if (index == 1) return Allies();
+    if (index == 1) return ListOfPatients();
     if (index == 2) return Medications();
     if (index == 3) return MyCustomForm();
 

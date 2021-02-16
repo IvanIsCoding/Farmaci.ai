@@ -1,6 +1,18 @@
-import 'globals.dart' as globals;
+/* login.dart - screenstate
+ * 
+ * Login page which authenticates with @Company API
+ * 
+ * TO-DO:
+ * -This is based on a boiler-plate. It should likely be completely rebuilt, 
+ * but the very least, the username-field should be removed. @Company doesn't need
+ * a username and password.
+ * 
+ * -The login image needs to be replaced. It's outdated, and improperly sized.
+ */
+
+import 'package:atsclepius/globals.dart' as globals;
 import 'package:flutter/material.dart';
-import './mainpage.dart';
+import 'package:atsclepius/screenstates/mainpage/mainpage.dart';
 
 /* Login Boilerplate Credit to https://morioh.com/p/0c57f60b9571 */
 

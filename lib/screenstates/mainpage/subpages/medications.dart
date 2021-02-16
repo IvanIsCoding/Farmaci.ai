@@ -1,8 +1,13 @@
-import 'globals.dart' as globals;
-import 'package:flutter/material.dart';
-//import './mainpage.dart';
+/* medications.dart - subpage of mainpage
+ *
+ * NON-FUNCTIONAL
+ * 
+ * GOAL: Loads the list of the patient's medications. Will likely be
+ * renamed to medicationlist.dart when the functionality is implemented.
+ */
 
-/* Widget for Friends & Family Page */
+import 'package:atsclepius/globals.dart' as globals;
+import 'package:flutter/material.dart';
 
 class Medications extends StatefulWidget {
   @override

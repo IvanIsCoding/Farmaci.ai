@@ -1,7 +1,11 @@
-import 'globals.dart' as globals;
+/* main.dart - root file
+ *
+ * Currenty navigates to the login-screen by default.
+ */
+
+import 'package:atsclepius/globals.dart' as globals;
 import 'package:flutter/material.dart';
-//import './mainpage.dart';
-import './login.dart';
+import 'package:atsclepius/screenstates/login.dart';
 
 void main() => runApp(MyApp());
 

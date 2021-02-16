@@ -1,2 +1,2 @@
-# Farmaci.ai
+# atsclepius
 TreeHacks 2021

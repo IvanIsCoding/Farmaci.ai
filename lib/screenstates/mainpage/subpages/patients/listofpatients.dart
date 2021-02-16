@@ -1,17 +1,30 @@
-import 'globals.dart' as globals;
-import 'homepage.dart';
-import 'patient.dart';
+/* listofpatients.dart - subpage of mainpage.dart
+ *
+ * NONFUNCTIONAL
+ * 
+ * Currently displays a rudimentary summary of a patient's status, based
+ * on hard-coded data.
+ * 
+ * TO-DO: 
+ * -Implement a view which shows the patients which the user has access to.
+ * -From the list-view, the user can tap a profile, which will serve the
+ * appropriate patient.dart page.
+ * -Remove hard-coded data, and separate out anything patient-specific.
+ */
+
+import 'package:atsclepius/globals.dart' as globals;
+import 'package:atsclepius/screenstates/mainpage/subpages/default.dart';
+import 'package:atsclepius/screenstates/mainpage/subpages/patients/subpages/patient.dart';
 import 'package:flutter/material.dart';
-//import './mainpage.dart';
 
 /* Widget for Friends & Family Page */
-class Allies extends StatefulWidget {
+class ListOfPatients extends StatefulWidget {
   @override
-  _AlliesState createState() => _AlliesState();
+  _ListOfPatientsState createState() => _ListOfPatientsState();
 }
 
-class _AlliesState extends State<Allies> {
-  State<MyHomePage> homePageRef;
+class _ListOfPatientsState extends State<ListOfPatients> {
+  State<MainPage> homePageRef;
   @override
   Widget build(BuildContext context) {
     var friendList;

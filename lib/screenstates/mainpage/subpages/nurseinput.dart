@@ -1,3 +1,21 @@
+/* nurseinput.dart - subpage of mainpage.dart
+ *
+ * NONFUNCTIONAL
+ * 
+ * A form which allows a nurse to input information about a patient.
+ * Since our app currently doesn't have separate views, it's kind of just
+ * shoved into the top-bar expanding menu. It doesn't currently work, and it's
+ * based on a *very* simple boilerplate.
+ * 
+ * TO-DO:
+ * -We need to concretely figure out what kind of information a nurse can put
+ * into a status update.abstract
+ * 
+ * -It needs to be rebuilt, since it's just boilerplate code. 
+ * 
+ * -Needs to interface with @Company API.
+ */
+
 import 'package:flutter/material.dart';
 
 // Create a Form widget.
@@ -74,3 +92,4 @@ class MyCustomFormState extends State<MyCustomForm> {
     );
   }
 }
+import 'dart:ffi';

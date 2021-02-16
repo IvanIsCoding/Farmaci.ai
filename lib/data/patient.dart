@@ -1,4 +1,14 @@
-/* Tracked patient in friend's list */
+/* patient.dart - Class
+ *
+ * INCOMPLETE
+ * 
+ * Holds the data for a patient. Extremely rudimentary at the moment.
+ * 
+ * TO-DO:
+ * -Research the type of data which be retained for a patient.
+ * -Create getters/setters.
+ * -Likely requires further class implementation, such as 'Visit' and 'Doctor'.
+ */
 
 class Patient {
   String name;
