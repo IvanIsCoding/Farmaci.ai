@@ -35,19 +35,27 @@ class _LoginDemoState extends State<LoginDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text("Health Portal"),
-      ),
+      backgroundColor: globals.primBgdColor,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.only(top: 120.0),
               child: Center(
                 child: Container(
-                    width: 200,
-                    height: 150,
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        top: BorderSide(width: 1.0, color: Color(0xFFFF000000)),
+                        left:
+                            BorderSide(width: 1.0, color: Color(0xFFFF000000)),
+                        right:
+                            BorderSide(width: 1.0, color: Color(0xFFFF000000)),
+                        bottom:
+                            BorderSide(width: 1.0, color: Color(0xFFFF000000)),
+                      ),
+                    ),
+                    width: 380,
+                    height: 190,
                     /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
@@ -56,55 +64,41 @@ class _LoginDemoState extends State<LoginDemo> {
             ),
             Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
               child: TextField(
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Email',
-                    hintText: 'Enter valid email id as abc@gmail.com'),
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(color: globals.primColor)),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: globals.primColor)),
+                    labelText: '@sign',
+                    labelStyle: TextStyle(
+                      color: globals.primColor,
+                      fontSize: 22,
+                    ),
+                    hintText: 'Please enter your @sign login.'),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                  left: 15.0, right: 15.0, top: 15, bottom: 0),
-              //padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Enter secure password'),
-              ),
-            ),
-            FlatButton(
-              onPressed: () {
-                //TODO FORGOT PASSWORD SCREEN GOES HERE
-              },
-              child: Text(
-                'Forgot Password',
-                style: TextStyle(color: Colors.blue, fontSize: 15),
-              ),
-            ),
-            Container(
-              height: 50,
-              width: 250,
-              decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-              child: FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => MainPage()));
-                },
-                child: Text(
-                  'Login',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+              padding: EdgeInsets.symmetric(vertical: 15),
+              child: Container(
+                height: 50,
+                width: 100,
+                decoration: BoxDecoration(
+                    color: globals.primColor,
+                    borderRadius: BorderRadius.circular(20)),
+                child: FlatButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => MainPage()));
+                  },
+                  child: Text(
+                    'Login',
+                    style: TextStyle(color: Colors.white, fontSize: 22),
+                  ),
                 ),
               ),
             ),
-            SizedBox(
-              height: 130,
-            ),
-            Text('New User? Create Account')
           ],
         ),
       ),

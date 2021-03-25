@@ -42,8 +42,11 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(
+        title: Text(globals.name),
+        backgroundColor: globals.primColor,), // Was originally widget.title, but was throwing a null error.
       body: Center(child: serveBody()),
+      backgroundColor: globals.primBgdColor,
       bottomNavigationBar: BottomAppBar(
         child: Row(
           children: [
