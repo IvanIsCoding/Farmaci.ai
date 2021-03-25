@@ -14,7 +14,7 @@
 
 import 'package:atsclepius/globals.dart' as globals;
 import 'package:atsclepius/screenstates/mainpage/subpages/default.dart';
-import 'package:atsclepius/screenstates/mainpage/subpages/patients/subpages/patient.dart';
+import 'package:atsclepius/data/patient.dart';
 import 'package:flutter/material.dart';
 
 /* Widget for Friends & Family Page */
