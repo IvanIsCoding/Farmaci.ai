@@ -47,7 +47,7 @@ class _MainPageState extends State<MainPage> {
         title: Text(globals.name),
         backgroundColor: globals.primColor,
       ), // Was originally widget.title, but was throwing a null error.
-      body: Center(child: Container(child: ListView(children: [serveBody()]))),
+      body: serveBody(),
       backgroundColor: globals.primBgdColor,
       bottomNavigationBar: BottomAppBar(
         child: Row(

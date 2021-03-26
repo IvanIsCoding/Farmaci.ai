@@ -8,7 +8,7 @@
 library my_prj.globals;
 import 'package:flutter/material.dart';
 
-String name = 'John Doe';
+String name = 'Currently in nurse view';
 String appName = "Health.loop";
 int friendCount = 0;
 Color primColor = Colors.orange;
