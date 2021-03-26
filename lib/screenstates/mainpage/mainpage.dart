@@ -44,9 +44,9 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(globals.name),
+        title: Text(globals.name), // Was originally widget.title, but was throwing a null error.
         backgroundColor: globals.primColor,
-      ), // Was originally widget.title, but was throwing a null error.
+      ), 
       body: serveBody(),
       backgroundColor: globals.primBgdColor,
       bottomNavigationBar: BottomAppBar(

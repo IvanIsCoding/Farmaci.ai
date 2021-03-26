@@ -7,6 +7,8 @@
 
 library my_prj.globals;
 import 'package:flutter/material.dart';
+import 'package:atsclepius/data/patient.dart';
+import 'package:atsclepius/data/patientList.dart';
 
 String name = 'Currently in nurse view';
 String appName = "Health.loop";
@@ -15,6 +17,8 @@ Color primColor = Colors.orange;
 Color altColor;
 Color primBgdColor = Colors.white;
 Color altBgdColor;
+int index = 0;
+PatientList patientList = new PatientList();
 
 ThemeData theme = ThemeData(
     // Define the default brightness and colors.

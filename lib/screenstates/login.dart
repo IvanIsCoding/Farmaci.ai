@@ -56,14 +56,10 @@ class _LoginDemoState extends State<LoginDemo> {
                     ),
                     width: 380,
                     height: 190,
-                    /*decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(50.0)),*/
                     child: Image.asset('asset/images/logo.png')),
               ),
             ),
             Padding(
-              //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
               child: TextField(
                 decoration: InputDecoration(
