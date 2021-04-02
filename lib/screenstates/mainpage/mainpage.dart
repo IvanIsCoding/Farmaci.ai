@@ -22,6 +22,7 @@ import 'package:flutter/material.dart';
 import 'package:atsclepius/screenstates/login.dart';
 import 'package:atsclepius/screenstates/mainpage/subpages/nurseinput.dart';
 import 'package:atsclepius/screenstates/mainpage/subpages/patientSearch.dart';
+import 'package:atsclepius/screenstates/mainpage/subpages/familyview.dart';
 
 class MainPage extends StatefulWidget {
   final String title;
@@ -38,7 +39,7 @@ class _MainPageState extends State<MainPage> {
     if (index == 2) return MedicationsPage();
     if (index == 3) return MyCustomForm();
 
-    return PatientView();
+    return FamilyView();
   }
 
   @override

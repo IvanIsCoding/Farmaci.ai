@@ -11,10 +11,10 @@ import 'package:flutter/material.dart';
 import 'package:atsclepius/data/patient.dart';
 import 'package:atsclepius/data/patientList.dart';
 
-String name = 'Currently in Patient View';
+String name = 'Currently in Family View';
 String appName = "Health.loop";
 int friendCount = 0;
-Color primColor = Colors.lightGreen;
+Color primColor = Colors.cyan.shade300;
 Color loginColor = Colors.orange;
 Color altColor;
 Color primBgdColor = Colors.white;
