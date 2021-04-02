@@ -129,15 +129,29 @@ class _PatientViewState extends State<PatientView> {
     ]));
 
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.only(top: 30),
-        child: GridView.count(shrinkWrap: true, crossAxisCount: 2, children: [
-          medicationButton,
-          appointmentsButton,
-          familyButton,
-          notificationsButton
-        ]),
-      ),
+      body: Column(children: [
+        Padding(
+          padding: EdgeInsets.only(top: 15),
+          child: Container(
+            child: Text(
+              'Welcome, @bob!',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 10),
+          child: GridView.count(shrinkWrap: true, crossAxisCount: 2, children: [
+            medicationButton,
+            appointmentsButton,
+            familyButton,
+            notificationsButton
+          ]),
+        )
+      ]),
     );
   }
 }

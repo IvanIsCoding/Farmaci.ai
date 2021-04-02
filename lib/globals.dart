@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:atsclepius/data/patient.dart';
 import 'package:atsclepius/data/patientList.dart';
 
-String name = 'Currently in patient view';
+String name = 'Currently in Patient View';
 String appName = "Health.loop";
 int friendCount = 0;
 Color primColor = Colors.lightGreen;

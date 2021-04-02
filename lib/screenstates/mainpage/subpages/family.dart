@@ -83,7 +83,7 @@ class _FamilyPageState extends State<FamilyPage> {
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 45),
+          padding: EdgeInsets.symmetric(vertical: 15),
           child: Container(
             height: 50,
             width: 300,
