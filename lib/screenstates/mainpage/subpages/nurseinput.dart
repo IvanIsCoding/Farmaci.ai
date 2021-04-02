@@ -18,6 +18,8 @@
 
 import 'package:flutter/material.dart';
 import 'dart:ffi';
+import 'package:atsclepius/globals.dart' as globals;
+
 // Create a Form widget.
 class MyCustomForm extends StatefulWidget {
   @override
@@ -44,32 +46,56 @@ class MyCustomFormState extends State<MyCustomForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text("Patient Name:"),
-          TextFormField(
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            child: Container(
+              height: 50,
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(color: globals.primColor)),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: globals.primColor)),
+                    labelText: 'Patient\'s @sign',
+                    labelStyle: TextStyle(
+                      color: globals.primColor,
+                      fontSize: 22,
+                    ),
+                    hintText: 'Please enter the patient\'s @sign login.'),
+              ),
+            ),
           ),
-          Text("Summary:"),
-          TextFormField(
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: globals.primColor)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: globals.primColor)),
+                  labelText: 'Summary of changes',
+                  labelStyle: TextStyle(
+                    color: globals.primColor,
+                    fontSize: 22,
+                  ),
+                  hintText: 'Summary of changes made to patient\'s profile'),
+            ),
           ),
-          Text("Status:"),
-          TextFormField(
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            child: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: globals.primColor)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: globals.primColor)),
+                  labelText: 'Summary of changes',
+                  labelStyle: TextStyle(
+                    color: globals.primColor,
+                    fontSize: 22,
+                  ),
+                  hintText: 'Summary of changes made to patient\'s profile'),
+            ),
           ),
           Padding(padding: const EdgeInsets.symmetric(vertical: 16.0)),
           Padding(
