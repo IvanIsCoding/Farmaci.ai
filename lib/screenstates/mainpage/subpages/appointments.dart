@@ -1,4 +1,4 @@
-/* mainpage.dart - screenstate
+/* AppointmentsPage.dart - screenstate
  *
  * The scaffold for the mainview of the app.
  * subpages are dynamically loaded to the body
@@ -8,7 +8,7 @@
  * something other than an index. Enumerator?
  * 
  * -There are no VoidCallBacks! There's no current way for subpages to send
- * data back to mainpage.dart. This is a problem, no?
+ * data back to AppointmentsPage.dart. This is a problem, no?
  * 
  * -General overhaul of the UI. Many of the buttons don't do anything.🤷
  * */
@@ -23,24 +23,15 @@ import 'package:atsclepius/screenstates/login.dart';
 import 'package:atsclepius/screenstates/mainpage/subpages/nurseinput.dart';
 import 'package:atsclepius/screenstates/mainpage/subpages/patientSearch.dart';
 
-class MainPage extends StatefulWidget {
+class AppointmentsPage extends StatefulWidget {
   final String title;
-  MainPage({Key key, this.title}) : super(key: key);
+  AppointmentsPage({Key key, this.title}) : super(key: key);
 
   @override
-  _MainPageState createState() => _MainPageState();
+  _AppointmentsPageState createState() => _AppointmentsPageState();
 }
 
-class _MainPageState extends State<MainPage> {
-  int index = 0;
-  Widget serveBody() {
-    if (index == 1) return ListOfPatients();
-    if (index == 2) return MedicationsPage();
-    if (index == 3) return MyCustomForm();
-
-    return PatientView();
-  }
-
+class _AppointmentsPageState extends State<AppointmentsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +40,7 @@ class _MainPageState extends State<MainPage> {
             .name), // Was originally widget.title, but was throwing a null error.
         backgroundColor: globals.primColor,
       ),
-      body: serveBody(),
+      body: Text("Hello"),
       backgroundColor: globals.primBgdColor,
       drawer: Drawer(
         child: ListView(

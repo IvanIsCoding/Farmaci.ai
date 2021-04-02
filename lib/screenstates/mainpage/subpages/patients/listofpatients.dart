@@ -26,27 +26,26 @@ class ListOfPatients extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListView.separated(
-        shrinkWrap: true,
-        padding: const EdgeInsets.all(8),
-        itemCount: globals.patientList.list.length,
-        // ignore: missing_return
-        itemBuilder: (context, index) {
-          if (globals.patientList.list[index].name.startsWith(searchString)) {
-            print(searchString);
-            return ListTile(
-                leading: Icon(Icons.person_sharp),
-                title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(globals.patientList.list[index].name),
-                      Text(globals.patientList.list[index].dob)
-                    ]),
-                trailing: Icon(Icons.keyboard_arrow_right));
-          }
-        },
-        separatorBuilder: (BuildContext context, int index) => const Divider(),
-      )
-    );
+        child: ListView.separated(
+      shrinkWrap: true,
+      padding: const EdgeInsets.all(8),
+      itemCount: globals.patientList.list.length,
+      // ignore: missing_return
+      itemBuilder: (context, index) {
+        if (globals.patientList.list[index].name.startsWith(searchString)) {
+          print(searchString);
+          return ListTile(
+              leading: Icon(Icons.person_sharp),
+              title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(globals.patientList.list[index].name),
+                    Text(globals.patientList.list[index].dob)
+                  ]),
+              trailing: Icon(Icons.keyboard_arrow_right));
+        }
+      },
+      separatorBuilder: (BuildContext context, int index) => const Divider(),
+    ));
   }
 }

@@ -4,7 +4,6 @@ import 'package:atsclepius/data/patient.dart';
 import 'package:atsclepius/data/patientList.dart';
 
 class PatientDetails extends StatelessWidget {
-  
   static const routeName = '/patientDetails';
   const PatientDetails({Key key}) : super(key: key);
   @override
