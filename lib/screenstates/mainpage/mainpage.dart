@@ -44,9 +44,10 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(globals.name), // Was originally widget.title, but was throwing a null error.
+        title: Text(globals
+            .name), // Was originally widget.title, but was throwing a null error.
         backgroundColor: globals.primColor,
-      ), 
+      ),
       body: serveBody(),
       backgroundColor: globals.primBgdColor,
       bottomNavigationBar: BottomAppBar(
@@ -73,7 +74,7 @@ class _MainPageState extends State<MainPage> {
             DrawerHeader(
               child: Text('@sclepius'),
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: globals.primColor,
               ),
             ),
             ListTile(

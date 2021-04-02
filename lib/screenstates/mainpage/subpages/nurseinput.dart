@@ -69,6 +69,44 @@ class MyCustomFormState extends State<MyCustomForm> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: Container(
+              width: 400,
+              decoration:
+                  BoxDecoration(border: Border.all(color: globals.primColor)),
+              child: Padding(
+                padding: EdgeInsets.only(left: 15),
+                child: DropdownButton<String>(
+                  value: dropdownValue,
+                  //icon: Icon(Icons.arrow_downward),
+                  iconSize: 24,
+                  elevation: 16,
+                  style: TextStyle(color: globals.primColor, fontSize: 20),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.white,
+                  ),
+                  onChanged: (String newValue) {
+                    setState(() {
+                      dropdownValue = newValue;
+                    });
+                  },
+                  items: <String>[
+                    'Add Prescription',
+                    'Remove Prescription',
+                    'Log Procedure',
+                    'Status Update'
+                  ].map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            child: Container(
               height: textBoxHeight,
               child: TextField(
                 decoration: InputDecoration(
@@ -86,47 +124,29 @@ class MyCustomFormState extends State<MyCustomForm> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            padding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
             child: Container(
-              width: 400,
-              child: DropdownButton<String>(
-                value: dropdownValue,
-                icon: Icon(Icons.arrow_downward),
-                iconSize: 24,
-                elevation: 16,
-                style: TextStyle(color: globals.primColor, fontSize: 20),
-                underline: Container(
-                  height: 2,
+              height: 50,
+              width: 120,
+              decoration: BoxDecoration(
                   color: globals.primColor,
-                ),
-                onChanged: (String newValue) {
-                  setState(() {
-                    dropdownValue = newValue;
-                  });
+                  borderRadius: BorderRadius.circular(20)),
+              child: FlatButton(
+                onPressed: () {
+                  // Validate returns true if the form is valid, or false
+                  // otherwise.
+                  if (_formKey.currentState.validate()) {
+                    // If the form is valid, display a Snackbar.
+                    Scaffold.of(context).showSnackBar(
+                        SnackBar(content: Text('Processing Data')));
+                  }
                 },
-                items: <String>['One', 'Two', 'Free', 'Four']
-                    .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-                  );
-                }).toList(),
+                child: Text(
+                  'Submit',
+                  style: TextStyle(color: Colors.white, fontSize: 22),
+                ),
               ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                // Validate returns true if the form is valid, or false
-                // otherwise.
-                if (_formKey.currentState.validate()) {
-                  // If the form is valid, display a Snackbar.
-                  Scaffold.of(context)
-                      .showSnackBar(SnackBar(content: Text('Processing Data')));
-                }
-              },
-              child: Text('Submit'),
             ),
           ),
         ],
