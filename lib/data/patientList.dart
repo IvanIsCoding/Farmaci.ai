@@ -5,23 +5,23 @@ class PatientList {
   PatientList() {
     list = List(3);
     list[0] = new Patient(
-        "Sally Fields", // name
+        "@bob", // name
         "Friend", // relationship
-        "January 20th, 1972",
+        "Floor 2, Room A",
         "She's feeling much better, and will be discharged soon. She ate a full breakfast, walked around the ward several times, and was very talkative and cheerful.",
         "Very Good");
 
     list[1] = new Patient(
-        "Gary Doe", // name
+        "@colin", // name
         "Relative", // relationship
-        "January 9th, 1984",
+        "Floor 2, Room B",
         "His breathing and appetite has improved. His spirits are up.",
         "Good, and Improving");
 
-   list[2] = new Patient(
-        "Samantha Smith", // name
+    list[2] = new Patient(
+        "@jagan", // name
         "Friend", // relationship
-        "February 4th, 1996",
+        "Floor 2, Room C",
         "Her surgery went very well, and she's recovering very well.",
         "Very Good");
   }

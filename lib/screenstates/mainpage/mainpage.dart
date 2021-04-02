@@ -81,13 +81,6 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             ListTile(
-                title: Text('Friends and Family'),
-                onTap: () {
-                  setState(() {
-                    index = 1;
-                  });
-                }),
-            ListTile(
                 title: Text('Input Patient Data'),
                 onTap: () {
                   setState(() {
