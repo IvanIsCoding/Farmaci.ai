@@ -64,12 +64,12 @@ class _LoginDemoState extends State<LoginDemo> {
               child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
-                        borderSide: BorderSide(color: globals.primColor)),
+                        borderSide: BorderSide(color: globals.loginColor)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: globals.primColor)),
+                        borderSide: BorderSide(color: globals.loginColor)),
                     labelText: '@sign',
                     labelStyle: TextStyle(
-                      color: globals.primColor,
+                      color: globals.loginColor,
                       fontSize: 22,
                     ),
                     hintText: 'Please enter your @sign login.'),
@@ -81,7 +81,7 @@ class _LoginDemoState extends State<LoginDemo> {
                 height: 50,
                 width: 100,
                 decoration: BoxDecoration(
-                    color: globals.primColor,
+                    color: globals.loginColor,
                     borderRadius: BorderRadius.circular(20)),
                 child: FlatButton(
                   onPressed: () {

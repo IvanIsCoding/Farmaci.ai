@@ -17,6 +17,7 @@ import 'package:atsclepius/globals.dart' as globals;
 import 'package:atsclepius/screenstates/mainpage/subpages/medications.dart';
 import 'package:atsclepius/data/patient.dart';
 import 'package:atsclepius/screenstates/mainpage/subpages/patients/listofpatients.dart';
+import 'package:atsclepius/screenstates/mainpage/subpages/patientview.dart';
 import 'package:flutter/material.dart';
 import 'package:atsclepius/screenstates/login.dart';
 import 'package:atsclepius/screenstates/mainpage/subpages/nurseinput.dart';
@@ -37,7 +38,7 @@ class _MainPageState extends State<MainPage> {
     if (index == 2) return Medications();
     if (index == 3) return MyCustomForm();
 
-    return PatientSearch();
+    return PatientView();
   }
 
   @override
@@ -50,23 +51,6 @@ class _MainPageState extends State<MainPage> {
       ),
       body: serveBody(),
       backgroundColor: globals.primBgdColor,
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          children: [
-            IconButton(
-                icon: Icon(Icons.healing_sharp),
-                onPressed: () {
-                  setState(() {
-                    index = 2;
-                  });
-                }),
-            Spacer(),
-            IconButton(icon: Icon(Icons.pending_actions), onPressed: () {}),
-            Spacer(),
-            IconButton(icon: Icon(Icons.add_alert), onPressed: () {}),
-          ],
-        ),
-      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
