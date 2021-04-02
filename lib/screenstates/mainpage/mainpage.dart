@@ -65,13 +65,6 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             ListTile(
-                title: Text('Input Patient Data'),
-                onTap: () {
-                  setState(() {
-                    index = 3;
-                  });
-                }),
-            ListTile(
               title: Text('Log out'),
               onTap: () {
                 Navigator.push(context,
