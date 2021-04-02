@@ -16,7 +16,7 @@ class PatientSearch extends StatefulWidget {
 }
 
 class _PatientSearchState extends State<PatientSearch> {
-  String searchString = '';
+  String searchString = "";
   TextEditingController searchController = new TextEditingController();
   VoidCallback updatePatientList;
   _PatientSearchState({this.searchString, this.updatePatientList});
@@ -57,9 +57,9 @@ class _PatientSearchState extends State<PatientSearch> {
             print(searchController.text);
             return ListTile(
                 onTap: () => {
-                        Navigator.pushNamed(context, '/patientDetails',
-                            arguments: index)
-                      },
+                      Navigator.pushNamed(context, '/patientDetails',
+                          arguments: index)
+                    },
                 leading: Icon(Icons.person_sharp),
                 title: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
