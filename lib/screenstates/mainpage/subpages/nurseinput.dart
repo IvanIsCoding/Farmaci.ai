@@ -38,6 +38,7 @@ class MyCustomFormState extends State<MyCustomForm> {
   // not a GlobalKey<MyCustomFormState>.
   final _formKey = GlobalKey<FormState>();
   String dropdownValue = null; // debug
+  double textBoxHeight = 50;
   @override
   Widget build(BuildContext context) {
     // Build a Form widget using the _formKey created above.
@@ -49,7 +50,7 @@ class MyCustomFormState extends State<MyCustomForm> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             child: Container(
-              height: 50,
+              height: textBoxHeight,
               child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
@@ -67,47 +68,52 @@ class MyCustomFormState extends State<MyCustomForm> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            child: TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide(color: globals.primColor)),
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: globals.primColor)),
-                  labelText: 'Summary of changes',
-                  labelStyle: TextStyle(
-                    color: globals.primColor,
-                    fontSize: 22,
-                  ),
-                  hintText: 'Summary of changes made to patient\'s profile'),
+            child: Container(
+              height: textBoxHeight,
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(color: globals.primColor)),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: globals.primColor)),
+                    labelText: 'Summary of changes',
+                    labelStyle: TextStyle(
+                      color: globals.primColor,
+                      fontSize: 22,
+                    ),
+                    hintText: 'Summary of changes made to patient\'s profile'),
+              ),
             ),
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            child: DropdownButton<String>(
-              value: dropdownValue,
-              icon: Icon(Icons.arrow_downward),
-              iconSize: 24,
-              elevation: 16,
-              style: TextStyle(color: Colors.deepPurple),
-              underline: Container(
-                height: 2,
-                color: Colors.deepPurpleAccent,
+            child: Container(
+              width: 400,
+              child: DropdownButton<String>(
+                value: dropdownValue,
+                icon: Icon(Icons.arrow_downward),
+                iconSize: 24,
+                elevation: 16,
+                style: TextStyle(color: globals.primColor, fontSize: 20),
+                underline: Container(
+                  height: 2,
+                  color: globals.primColor,
+                ),
+                onChanged: (String newValue) {
+                  setState(() {
+                    dropdownValue = newValue;
+                  });
+                },
+                items: <String>['One', 'Two', 'Free', 'Four']
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
               ),
-              onChanged: (String newValue) {
-                setState(() {
-                  dropdownValue = newValue;
-                });
-              },
-              items: <String>['One', 'Two', 'Free', 'Four']
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
             ),
           ),
-          Padding(padding: const EdgeInsets.symmetric(vertical: 16.0)),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
