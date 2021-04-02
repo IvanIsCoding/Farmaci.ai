@@ -50,17 +50,28 @@ class _MedicationsPageState extends State<MedicationsPage> {
       body: ListView(
         children: <Widget>[
           ListTile(
-              leading: Icon(Icons.medical_services),
+              leading: Icon(
+                Icons.medical_services,
+                color: Colors.blueAccent,
+              ),
               title: Text('IBUPROFEN 800 MG - 60 TABLETS '),
-              trailing: Icon(Icons.keyboard_arrow_right),
+              trailing: Icon(
+                Icons.keyboard_arrow_right,
+              ),
               onTap: () {}),
           ListTile(
-              leading: Icon(Icons.medical_services),
+              leading: Icon(
+                Icons.medical_services,
+                color: Colors.blueAccent,
+              ),
               title: Text('VERAPAMIL 180 MG - 120 TABLETS'),
               trailing: Icon(Icons.keyboard_arrow_right),
               onTap: () {}),
           ListTile(
-              leading: Icon(Icons.medical_services),
+              leading: Icon(
+                Icons.medical_services,
+                color: Colors.blueAccent,
+              ),
               title: Text('HYDROCHLOROTHIAZIDE 25 MG - 60 TABLETS'),
               trailing: Icon(Icons.keyboard_arrow_right),
               onTap: () {}),

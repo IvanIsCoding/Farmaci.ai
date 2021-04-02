@@ -31,15 +31,75 @@ class FamilyPage extends StatefulWidget {
 }
 
 class _FamilyPageState extends State<FamilyPage> {
+  static const iconSize = 45.0;
+  static const iconColor = Colors.blueGrey;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-            "Family"), // Was originally widget.title, but was throwing a null error.
+            "Family & Friends"), // Was originally widget.title, but was throwing a null error.
         backgroundColor: globals.primColor,
       ),
-      body: Text("FamilyPage"),
+      body: Container(
+          child: Column(children: [
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ListTile(
+                  leading:
+                      Icon(Icons.account_box, size: iconSize, color: iconColor),
+                  title: Text('@barbara', style: TextStyle(fontSize: 15)),
+                  subtitle: Text('Family Access'),
+                  trailing: Icon(Icons.chevron_right, size: iconSize))
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ListTile(
+                  leading:
+                      Icon(Icons.account_box, size: iconSize, color: iconColor),
+                  title: Text('@eve', style: TextStyle(fontSize: 15)),
+                  subtitle: Text('Family Access'),
+                  trailing: Icon(Icons.chevron_right, size: iconSize))
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ListTile(
+                  leading:
+                      Icon(Icons.account_box, size: iconSize, color: iconColor),
+                  title: Text('@ashish', style: TextStyle(fontSize: 15)),
+                  subtitle: Text('Friend Access'),
+                  trailing: Icon(Icons.chevron_right, size: iconSize))
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 45),
+          child: Container(
+            height: 50,
+            width: 300,
+            decoration: BoxDecoration(
+                color: globals.primColor,
+                borderRadius: BorderRadius.circular(20)),
+            child: FlatButton(
+              onPressed: () {},
+              child: Text(
+                'Manage Family & Friends',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            ),
+          ),
+        )
+      ])),
       backgroundColor: globals.primBgdColor,
       drawer: Drawer(
         child: ListView(

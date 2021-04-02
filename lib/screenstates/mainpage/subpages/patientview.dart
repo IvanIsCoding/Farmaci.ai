@@ -96,7 +96,7 @@ class _PatientViewState extends State<PatientView> {
         ),
       ),
       Text(
-        'Family',
+        'Family & Friends',
         textAlign: TextAlign.center,
         overflow: TextOverflow.ellipsis,
         style: TextStyle(fontWeight: FontWeight.bold, fontSize: buttonFontSize),
