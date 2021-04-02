@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:atsclepius/screenstates/mainpage/subpages/appointments.dart';
 import 'package:atsclepius/screenstates/mainpage/subpages/medications.dart';
 import 'package:atsclepius/screenstates/mainpage/subpages/family.dart';
+import 'package:atsclepius/screenstates/mainpage/subpages/notifications.dart';
 
 class FamilyView extends StatefulWidget {
   FamilyView({Key key}) : super(key: key);
@@ -30,7 +31,7 @@ class _FamilyViewState extends State<FamilyView> {
           child: FlatButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => (MedicationsPage())));
+                    MaterialPageRoute(builder: (_) => (NotificationsPage())));
               },
               child: Column(children: [
                 Padding(

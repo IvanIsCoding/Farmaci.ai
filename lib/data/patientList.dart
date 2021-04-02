@@ -3,9 +3,9 @@ import 'package:atsclepius/data/patient.dart';
 class PatientList {
   var list;
   PatientList() {
-    list = List(3);
+    list = List(6);
     list[0] = new Patient(
-        "@bob", // name
+        "", // name
         "Friend", // relationship
         "Floor 2, Room A",
         "She's feeling much better, and will be discharged soon. She ate a full breakfast, walked around the ward several times, and was very talkative and cheerful.",
@@ -19,6 +19,24 @@ class PatientList {
         "Good, and Improving");
 
     list[2] = new Patient(
+        "@jagan", // name
+        "Friend", // relationship
+        "Floor 2, Room C",
+        "Her surgery went very well, and she's recovering very well.",
+        "Very Good");
+    list[3] = new Patient(
+        "@jagan", // name
+        "Friend", // relationship
+        "Floor 2, Room C",
+        "Her surgery went very well, and she's recovering very well.",
+        "Very Good");
+    list[4] = new Patient(
+        "@jagan", // name
+        "Friend", // relationship
+        "Floor 2, Room C",
+        "Her surgery went very well, and she's recovering very well.",
+        "Very Good");
+    list[5] = new Patient(
         "@jagan", // name
         "Friend", // relationship
         "Floor 2, Room C",
