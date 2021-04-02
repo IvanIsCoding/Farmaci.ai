@@ -83,12 +83,19 @@ class _NotificationsPageState extends State<NotificationsPage> {
                         Navigator.pushNamed(context, '/patientDetails',
                             arguments: index)
                       },
-                  leading: Icon(Icons.notifications),
+                  leading: Icon(Icons.notifications, size: 30),
                   title: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(patientList.list[index].name),
-                        Text(patientList.list[index].dob)
+                        Text(
+                          patientList.list[index].name,
+                        ),
+                        Padding(
+                            padding: EdgeInsets.only(top: 5),
+                            child: Text(patientList.list[index].dob,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                )))
                       ]),
                   trailing: Icon(Icons.keyboard_arrow_right));
             }
