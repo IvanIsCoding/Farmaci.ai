@@ -15,7 +15,7 @@ class PatientView extends StatefulWidget {
 class _PatientViewState extends State<PatientView> {
   static const iconSize = 100.0;
   static const buttonSize = 170.0;
-  static const buttonFontSize = 20.0;
+  static const buttonFontSize = 14.0;
 
   @override
   Widget build(BuildContext context) {

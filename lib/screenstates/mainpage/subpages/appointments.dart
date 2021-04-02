@@ -33,6 +33,7 @@ class AppointmentsPage extends StatefulWidget {
 
 class _AppointmentsPageState extends State<AppointmentsPage> {
   @override
+  static const iconSize = 35.0;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -46,11 +47,16 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              const ListTile(
-                leading: Icon(Icons.local_hospital, size: 50),
-                title: Text('Heart Shaker'),
-                subtitle: Text('TWICE'),
-              ),
+              ListTile(
+                  leading: Icon(Icons.local_hospital,
+                      size: iconSize, color: Colors.redAccent),
+                  title: Text('Blood Pressure Measurement',
+                      style: TextStyle(fontSize: 15)),
+                  subtitle: Text('@alice'),
+                  trailing: Padding(
+                      padding: EdgeInsets.only(top: 40),
+                      child: Text("April 2nd, 2021",
+                          style: TextStyle(fontSize: 12)))),
             ],
           ),
         ),
@@ -58,11 +64,16 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              const ListTile(
-                leading: Icon(Icons.local_hospital, size: 50),
-                title: Text('Heart Shaker'),
-                subtitle: Text('TWICE'),
-              ),
+              ListTile(
+                  leading: Icon(Icons.local_hospital,
+                      size: iconSize, color: Colors.redAccent),
+                  title: Text('Moved to Floor 2, Room A',
+                      style: TextStyle(fontSize: 15)),
+                  subtitle: Text('@hospital'),
+                  trailing: Padding(
+                      padding: EdgeInsets.only(top: 40),
+                      child: Text("April 2nd, 2021",
+                          style: TextStyle(fontSize: 12)))),
             ],
           ),
         ),
@@ -70,14 +81,19 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              const ListTile(
-                leading: Icon(Icons.album, size: 50),
-                title: Text('Heart Shaker'),
-                subtitle: Text('TWICE'),
-              ),
+              ListTile(
+                  leading: Icon(Icons.local_hospital,
+                      size: iconSize, color: Colors.redAccent),
+                  title: Text('Checked in at Hospital',
+                      style: TextStyle(fontSize: 15)),
+                  subtitle: Text('@hospital'),
+                  trailing: Padding(
+                      padding: EdgeInsets.only(top: 40),
+                      child: Text("April 2nd, 2021",
+                          style: TextStyle(fontSize: 12)))),
             ],
           ),
-        )
+        ),
       ])),
       backgroundColor: globals.primBgdColor,
       drawer: Drawer(
