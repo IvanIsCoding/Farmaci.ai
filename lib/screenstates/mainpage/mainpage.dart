@@ -71,10 +71,13 @@ class _MainPageState extends State<MainPage> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              child: Text('@sclepius'),
-              decoration: BoxDecoration(
-                color: globals.primColor,
+            Container(
+              height: 50,
+              child: DrawerHeader(
+                child: Text('@sclepius'),
+                decoration: BoxDecoration(
+                  color: globals.primColor,
+                ),
               ),
             ),
             ListTile(
