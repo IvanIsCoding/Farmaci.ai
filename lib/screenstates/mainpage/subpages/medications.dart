@@ -43,8 +43,8 @@ class _MedicationsPageState extends State<MedicationsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(globals
-            .name), // Was originally widget.title, but was throwing a null error.
+        title: Text(
+            "Medications"), // Was originally widget.title, but was throwing a null error.
         backgroundColor: globals.primColor,
       ),
       body: ListView(

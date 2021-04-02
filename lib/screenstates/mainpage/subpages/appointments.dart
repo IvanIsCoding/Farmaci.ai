@@ -36,11 +36,49 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(globals
-            .name), // Was originally widget.title, but was throwing a null error.
+        title: Text(
+            "Appointments"), // Was originally widget.title, but was throwing a null error.
         backgroundColor: globals.primColor,
       ),
-      body: Text("Hello"),
+      body: Container(
+          child: Column(children: [
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.local_hospital, size: 50),
+                title: Text('Heart Shaker'),
+                subtitle: Text('TWICE'),
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.local_hospital, size: 50),
+                title: Text('Heart Shaker'),
+                subtitle: Text('TWICE'),
+              ),
+            ],
+          ),
+        ),
+        Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ListTile(
+                leading: Icon(Icons.album, size: 50),
+                title: Text('Heart Shaker'),
+                subtitle: Text('TWICE'),
+              ),
+            ],
+          ),
+        )
+      ])),
       backgroundColor: globals.primBgdColor,
       drawer: Drawer(
         child: ListView(
